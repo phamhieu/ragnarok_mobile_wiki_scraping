@@ -1,3 +1,5 @@
+# Ragnarok Mobile Wiki Scraping Tool
+
 ## How to run
 	* Install Python 2.7
 	* Install Virtualenv
