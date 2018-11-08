@@ -2,13 +2,11 @@ import logging
 import requests
 import re
 import time
-import urllib2
 import sys
 
 import lxml.html as html
 import app.services.database as db
 
-from lxml.html.clean import Cleaner
 from sqlitedict import SqliteDict
 
 
@@ -118,7 +116,6 @@ class Monster(Interface):
             return '{}{}'.format(BASE_URL, _pageIndex)
 
         index = 0
-        # run it nonstop
         while index <= 17:
             nextId = index + 1
             url = next_scraping_url(nextId)
@@ -136,5 +133,5 @@ class Monster(Interface):
             self.parse_monster(parser)
 
             index += 1
-            # we dont want to exploid the website
+            # we dont want to exploit the website
             time.sleep(3.0)
